@@ -1,0 +1,278 @@
+<!DOCTYPE html>
+{% load static %}
+<html lang="en">
+<head>
+	<meta charset="utf-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1">
+	<title>Home</title>
+	<link href="{% static "css/bootstrap.min.css" %}" rel="stylesheet" type="text/css">
+	<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css" integrity="sha384-Gn5384xqQ1aoWXA+058RXPxPg6fy4IWvTNh0E263XmFcJlSAwiGgFAW/dAiS6JXm" crossorigin="anonymous">
+<script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/js/bootstrap.min.js" integrity="sha384-JZR6Spejh4U02d8jOt6vLEHfe/JQGiRRSQQxSfFWpi1MquVdAyjUar5+76PVCmYl" crossorigin="anonymous"></script>
+
+<link href="https://stackpath.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css" rel="stylesheet" integrity="sha384-wvfXpqpZZVQGK6TAh5PVlGOfQNHSoD2xbE+QkPxCAFlNEevoEH3Sl0sibVcOQVnN" crossorigin="anonymous">
+<link rel="stylesheet" href="{% static "css/fixed.css" %}" type="text/css">
+<link rel="stylesheet" type="text/css" href="https://unpkg.com/swiper/css/swiper.min.css">
+    
+<link rel="stylesheet" href="{% static "css/about_us.css" %}" type="text/css">
+<!-- <link rel="stylesheet" href="{% static "css/fixed.css" %}" type="text/css"> -->
+
+</head>
+
+<body data-spy="scroll" data-target="#navbarResponsive">
+
+	<!-- home Start -->
+	<div id="home">
+
+		<!-- navigation -->
+		<nav class="navbar navbar-expand-md navbar-dark bg-dark fixed-top">
+			<a class="navbar-brand" href="/"><img src="{% static "images\cards\White_T.png" %}"></a>
+			<button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarResponsive">
+				<span class="navbar-toggler-icon"></span>
+			</button>
+			<div class="collapse navbar-collapse" id="navbarResponsive">
+				<ul class="navbar-nav ml-auto">
+					<li class="nav-item">
+						<a class="nav-link" href="/">Home</a>
+					</li>
+					<li class="nav-item">
+						<a class="nav-link" href="#about_us">About Us</a>
+					</li>
+					<li class="nav-item">
+						<a class="nav-link" href="#obj">Objectives</a>
+					</li>
+					<li class="nav-item">
+						<a class="nav-link" href="#team_card">Team</a>
+					</li>
+					<li class="nav-item">
+						<a class="nav-link" href="#contact">Contact</a>
+					</li>
+				</ul>
+			</div>
+		</nav>
+
+		</div>
+	<!-- home end  -->
+
+
+	
+
+<!--- Start About us Section -->
+<div id="course" class="offset">
+
+    <div class="col-12 narrow text-center" id="about_us">
+        <h1>ABout Us</h1>
+        <h3></h3>
+        <h2>PCLub Ahmedabad UNiversity</h2>
+        <h3></h3>
+        <h1>Description</h1>
+        <p class="lead">
+            {% if about_us %}
+            {% for evn in about_us %}   
+                {{evn.desc}}<br><br>
+            {% endfor %}
+            {% else %}
+                <p>No data found !</p>
+            {% endif %}
+            <!-- <a class="btn btn-secondary btn-md" href="https://w3newbie.com/courses" target="_blank">Read More</a> -->
+    </div>
+
+
+    
+<div class="col-12 narrow text-center" id="obj">
+	<!-- <h1>ABout Us</h1>
+	<h3></h3>
+    <h2>PCLub Ahmedabad UNiversity</h2> -->
+    <h1>Objectives</h1>
+	<p class="lead">
+        {% if about_us %}
+        {% for evn in about_us %}   
+            {{evn.objectives}}<br><br>
+        {% endfor %}
+        {% else %}
+            <p>No data found !</p>
+        {% endif %}
+        <!-- <a class="btn btn-secondary btn-md" href="https://w3newbie.com/courses" target="_blank">Read More</a> -->
+</div>
+
+</div> 
+<!--- End About us Section -->
+
+<!-- Team start -->
+<div id="team" class="offset">
+    <div class="col-12 text-center">
+    <h3 class="heading">Team</h3>
+        <div class="heading-underline"></div>
+    </div>
+        <div class="row padding">
+
+            <div class="col-md-4">
+                <div class="card text-center">
+                    <!-- <img class="card-img-top" src="{% static "images\team\team1.png" %}" alt=""> -->
+                    <div class="card-body">
+                        <h4>Devam Shah</h4>
+                        <!-- <h5>Experience of giving Dhoka in making groups and doing coursera courses </h5> -->
+                    </div>
+                </div><!--Cards End-->
+            </div>
+
+            
+            <div class="col-md-4">
+                <div class="card text-center">
+                    <!-- <img class="card-img-top" src="{% static "images\team\team2.png" %}" alt=""> -->
+                    <div class="card-body">
+                        <h4>Varshil Shah</h4>
+                        <!-- <h5>Experience of making websites and making filters</h5> -->
+                    </div>
+                </div><!--Cards End-->
+            </div>
+        </div><!--End of the row-->
+</div>
+<!-- Team end -->
+
+<!-- Team card  -->
+
+<div class="swiper-container" id="team_card">
+    <div class="swiper-wrapper">
+        {% if team %}
+        {% for tm in team %} 
+        
+        <div class="swiper-slide" >
+            <div class="imgBx">
+                <!-- <img src="{% static "images\team\team2.png" %}" alt=""> -->
+                <!-- <img src="{% static "media\profile_image\profile_image' + {{tm.name}} + ' .jpg" %}" alt=""> -->
+                
+                <img src={{tm.images.url}} alt="">
+            </div>
+            <div class="details">
+                  
+                    <h3>{{tm.name}} <br> <span>{{tm.position}}</span></h3>
+                
+            </div>
+        
+        </div>
+        {% endfor %}
+        {% else %}
+        <p>No data found !</p>
+        {% endif %}
+        
+</div>
+    <!-- Add Pagination -->
+    <div class="swiper-pagination"></div>
+  </div>
+<!-- End team card  -->
+
+		<!-- home Contact -->
+		<div id="contact" class="offset">
+			
+			<footer>
+				<div class="row justify-content-center">
+					
+					<div class="col-md-5 text-center">
+						<a href="#">
+							<svg>
+								<rect>
+									
+				
+								</rect>
+							</svg>
+							<img src="{% static "images\cards\White_T.png" %}" alt="">
+						</a>
+						<p>At our core we are making to give the world the best oppurtunity of devloping the future</p>
+						<strong>Contact INFO</strong>
+						<p>8980190408 <br> email@ahduni.edu.in</p>
+
+						<!-- <a href="" target="_blank"><i class="fab fa-facebook-square"></i></a>
+						<a href="" target="_blank"><i class="fab fa-twitter-square"></i></a>
+						<a href="" target="_blank"><i class="fab fa-instagram"></i></a> -->
+						
+					</div>
+
+					<hr class="socket">
+					&copy PCLub Ahmedabad University 
+				
+				</div><!--End of row-->
+			</footer>
+
+		</div>
+		<!-- home Contact  -->
+<!-- Start social media -->
+<div class="Social-Media ">
+    <div class="col-md-5">
+	<ul>
+        <li>
+            <a href="https://www.facebook.com/" target="_blind">
+                <span></span>
+                <span></span>
+                <span></span>
+                <span></span>
+                <span class="fa fa-facebook" ></span>
+            </a>
+        </li>
+        <li>
+            <a href="https://twitter.com/explore" target="_blind">
+                <span></span>
+                <span></span>
+                <span></span>
+                <span></span>
+                <span class="fa fa-twitter" aria-hidden="true"></span>
+            </a>
+        </li>
+        
+        <li>
+            <a href="https://in.linkedin.com/" target="_blind">
+                <span></span>
+                <span></span>
+                <span></span>
+                <span></span>
+                <span class="fa fa-linkedin" aria-hidden="true"></span>
+            </a>
+        </li>
+        <li>
+            <a href="https://www.instagram.com/" target="_blind">
+                <span></span>
+                <span></span>
+                <span></span>
+                <span></span>
+                <span class="fa fa-instagram" aria-hidden="true"></span>
+            </a>
+        </li>
+    </ul></div>
+</div>
+
+<img src="{% static "media\profile_image\1.jpg" %}" alt="Not found">
+<!-- "{% static "images\cards\White_T.jpg" %}" -->
+<!--- Script Source Files -->
+<script src="{% static "js/jquery-3.3.1.min.js" %}"></script>
+<script src="{% static "bootstrap-4.1.3-dist/js/bootstrap.min.js" %}"></script>
+
+<!-- <script src="https://use.fontawesome.com/releases/v5.6.1/js/all.js"></script> -->
+<!--- End of Script Source Files -->
+<script src="{% static "js/scroll-out.js" %}"></script>
+    <script type="text/javascript">
+    ScrollOut({
+        targets: 'h1,h2,p,.btn-secondary,h4,h5,.team-img'
+    })
+    </script>
+    <script src="https://unpkg.com/swiper/js/swiper.min.js"></script>
+    <script>
+        var swiper = new Swiper('.swiper-container', {
+          effect: 'coverflow',
+          grabCursor: true,
+          centeredSlides: true,
+          slidesPerView: 'auto',
+          coverflowEffect: {
+            rotate: 50,
+            stretch: 0,
+            depth: 100,
+            modifier: 1,
+            slideShadows: true,
+          },
+          pagination: {
+            el: '.swiper-pagination',
+          },
+        });
+      </script>
+</body>
+</html>
+
+

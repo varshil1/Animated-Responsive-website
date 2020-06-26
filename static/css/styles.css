@@ -1,0 +1,34 @@
+.card-body {
+    padding: 0.5rem;
+}
+
+.card{
+    background-color: #fff;
+    border: 1px solid rgba(0,0,0,.125);
+    border-radius: 0;
+}
+
+.cardset1{
+    background-color: #669999;
+}
+
+.cardset2{
+    background-color: #cc6666;
+}
+
+.cardset3{
+    background-color: #cc9966;
+}
+
+h3.card-title{
+    font-size: 1.5rem;
+}
+
+h5.card-subtitle{
+    font-size: 1.2rem;
+}
+
+p.card-text{
+    padding-bottom: 0.8rem;
+    line-height: 1.5rem;
+}
