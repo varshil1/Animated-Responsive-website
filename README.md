@@ -7,6 +7,11 @@ Where the event page is shown in the form of a timeline with options of live, up
 Resources page consists of event cards, where each card has a poster of the resource and a short description with the link to it.
 The About us page has details about the club, objectives and lists of committee members with their photos.  And the page has scroll and card animations.
 
+## Authors
+* [**Varshil Shah**](https://github.com/varshil1)
+* [**Devam Shah**](https://github.com/Devam911)
+
+
 
 **SCREENSHOTS OF THE WEBSITE**
 
